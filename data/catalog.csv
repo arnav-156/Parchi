@@ -1,0 +1,74 @@
+sku_id,brand,product,variant,pack_size,sale_unit,units_per_carton,mrp_inr,aliases
+BIS001,Parle-G,Parle-G Glucose Biscuit,Regular,70g,PACKET,120,5,parle-g|parle g|parleg|parle|parle ji|parle glucose|पारले जी|पारले-जी|पारले
+BIS002,Good Day,Good Day Cashew,Cashew,100g,PACKET,60,30,good day|goodday|good de|गुड डे|britannia good day
+BIS003,Marie Gold,Marie Gold,Regular,120g,PACKET,60,30,marie gold|marie|mari gold|मैरी गोल्ड|britannia marie
+BIS004,Monaco,Monaco Classic,Classic,63g,PACKET,96,10,monaco|monako|मोनाको
+BIS005,Dark Fantasy,Dark Fantasy Choco Fills,Choco Fills,75g,PACKET,48,40,dark fantasy|डार्क फैंटसी|sunfeast dark fantasy
+BIS006,Hide & Seek,Hide & Seek Choco Chip,Choco Chip,100g,PACKET,60,30,hide and seek|hide n seek|hide & seek|हाइड एंड सीक
+BIS007,Bourbon,Bourbon,Chocolate Cream,100g,PACKET,60,30,bourbon|borbon|बॉर्बन|बोरबोन
+BIS008,Krackjack,Krackjack,Sweet & Salty,60g,PACKET,96,10,krackjack|crack jack|krack jack|क्रैकजैक
+NOO001,Maggi,Maggi Masala Noodles,Single,70g,PACKET,96,14,maggi|maggie|magi|मैगी|maggi masala|maggi noodles|chhota maggi|chhoti maggi|chhota|chhoti|single|small|chhota packet
+NOO002,Maggi,Maggi Masala Noodles,4-Pack,280g,PACKET,24,56,maggi|maggie|magi|मैगी|maggi masala|maggi noodles|bada maggi|badi maggi|bada|badi|family pack|four pack|big
+NOO003,Ching's,Ching's Hakka Noodles,Veg Hakka,150g,PACKET,48,30,chings|ching's|chings hakka|hakka noodles|चिंग्स
+NOO004,Top Ramen,Top Ramen Curry,Curry,70g,PACKET,96,15,top ramen|ramen|टॉप रेमन
+DET001,Surf Excel,Surf Excel Easy Wash,Easy Wash,500g,PACKET,24,70,surf excel|surf|surf excel easy wash|सर्फ एक्सेल|सर्फ|सर्फ़ एक्सेल
+DET002,Surf Excel,Surf Excel Easy Wash,Easy Wash,1kg,PACKET,12,135,surf excel|surf|surf excel easy wash|सर्फ एक्सेल|सर्फ|सर्फ़ एक्सेल
+DET003,Rin,Rin Detergent Powder,Powder,1kg,PACKET,12,90,rin|rin powder|रिन
+DET004,Ghadi,Ghadi Detergent Powder,Powder,1kg,PACKET,12,70,ghadi|ghari|ghadi powder|घड़ी|घडी
+DET005,Tide,Tide Plus,Plus,1kg,PACKET,12,120,tide|tide plus|टाइड
+DET006,Nirma,Nirma Washing Powder,Regular,1kg,PACKET,12,60,nirma|निरमा
+DET007,Vim,Vim Dishwash Bar,Bar,200g,PIECE,72,20,vim|vim bar|विम
+SAL001,Tata Salt,Tata Salt,Iodised,1kg,PACKET,25,28,tata salt|tata namak|namak|salt|टाटा नमक|टाटा साल्ट|नमक
+SAL002,Aashirvaad Salt,Aashirvaad Salt,Iodised,1kg,PACKET,25,26,aashirvaad salt|aashirvaad namak|ashirvad namak|आशीर्वाद नमक
+TP001,Colgate,Colgate Strong Teeth,100g,100g,PIECE,144,55,colgate|kolgate|colgate strong teeth|colgate lal wala|lal colgate|कोलगेट|कॉलगेट
+TP002,Colgate,Colgate Strong Teeth,200g,200g,PIECE,72,105,colgate|kolgate|colgate strong teeth|colgate lal wala|lal colgate|कोलगेट|कॉलगेट
+TP003,Colgate,Colgate MaxFresh,Blue Gel,150g,PIECE,72,95,colgate maxfresh|maxfresh|max fresh|neela colgate|blue colgate|कोलगेट मैक्सफ्रेश
+TP004,Pepsodent,Pepsodent Germicheck,Germicheck,150g,PIECE,72,85,pepsodent|pepsodant|पेप्सोडेंट
+TP005,Dabur Red,Dabur Red Paste,Paste,100g,PIECE,144,60,dabur red|dabur lal|dabur paste|डाबर रेड|डाबर लाल
+TP006,Dant Kanti,Patanjali Dant Kanti,Regular,100g,PIECE,144,50,dant kanti|dantkanti|patanjali paste|दंत कांति|दन्त कान्ति
+SOP001,Lux,Lux Soap,Rose,100g,PIECE,144,35,lux|lux soap|लक्स
+SOP002,Lifebuoy,Lifebuoy Soap,Total,100g,PIECE,144,30,lifebuoy|lifeboy|laifboy|लाइफबॉय
+SOP003,Cinthol,Cinthol Soap,Original,100g,PIECE,144,40,cinthol|sinthol|सिंथॉल|सिंथोल
+SOP004,Santoor,Santoor Soap,Sandal,100g,PIECE,144,38,santoor|santur|संतूर
+SOP005,Dove,Dove Soap,Cream Beauty,100g,PIECE,72,70,dove|dove soap|डव
+SOP006,Dettol,Dettol Soap,Original,125g,PIECE,72,55,dettol|dettol soap|detol|डेटॉल
+TEA001,Tata Tea,Tata Tea Premium,250g,250g,PACKET,40,140,tata tea|tata chai|tata tea premium|tata premium|टाटा चाय|टाटा टी
+TEA002,Tata Tea,Tata Tea Premium,500g,500g,PACKET,20,275,tata tea|tata chai|tata tea premium|tata premium|टाटा चाय|टाटा टी
+TEA003,Red Label,Brooke Bond Red Label,Regular,250g,PACKET,40,135,red label|brooke bond|lal label|रेड लेबल
+TEA004,Taj Mahal,Taj Mahal Tea,Regular,250g,PACKET,40,170,taj mahal|taj|ताज महल|ताजमहल
+TEA005,Wagh Bakri,Wagh Bakri Premium,Premium,250g,PACKET,40,145,wagh bakri|waghbakri|bagh bakri|वाघ बकरी|बाघ बकरी
+OIL001,Fortune,Fortune Soya Oil,Refined Soyabean,1L,PIECE,12,140,fortune|fortune oil|fortune soya|soya oil|फॉर्च्यून|फॉर्च्यून तेल
+OIL002,Fortune Mustard,Fortune Kachi Ghani Mustard Oil,Kachi Ghani,1L,PIECE,12,175,fortune sarson|fortune mustard|sarson tel|sarson ka tel|kachi ghani|सरसों तेल|सरसों का तेल
+OIL003,Saffola,Saffola Gold,Gold,1L,PIECE,12,195,saffola|saffola gold|safola|सफोला
+OIL004,Parachute,Parachute Coconut Oil,Coconut Oil,100ml,PIECE,96,50,parachute|parachut|nariyal tel|पैराशूट|नारियल तेल
+SHA001,Clinic Plus,Clinic Plus Shampoo Sachet,Sachet strip (16),6ml,STRIP,48,16,clinic plus|clinic|clinic plus shampoo|क्लिनिक प्लस
+ATT001,Aashirvaad Atta,Aashirvaad Whole Wheat Atta,5kg,5kg,PACKET,4,270,aashirvaad atta|aashirvaad|ashirvad|ashirwad atta|atta|आशीर्वाद आटा|आशीर्वाद
+ATT002,Aashirvaad Atta,Aashirvaad Whole Wheat Atta,10kg,10kg,PACKET,2,520,aashirvaad atta|aashirvaad|ashirvad|ashirwad atta|atta|आशीर्वाद आटा|आशीर्वाद
+ATT003,Pillsbury,Pillsbury Chakki Fresh Atta,5kg,5kg,PACKET,4,260,pillsbury|pilsbury|pillsbury atta|पिल्सबरी
+SUG001,Chini,Sugar (loose),50kg sack,50kg,SACK,1,2200,chini|cheeni|sugar|shakkar|चीनी|शक्कर
+DAL001,Tata Sampann,Tata Sampann Toor Dal,Toor Dal,1kg,PACKET,10,180,toor dal|arhar dal|tata dal|tata sampann|तूर दाल|अरहर दाल
+BEV001,Thums Up,Thums Up,750ml,750ml,PIECE,24,40,thums up|thumbs up|thums|thamsap|थम्स अप|थम्सअप
+BEV002,Coca-Cola,Coca-Cola,750ml,750ml,PIECE,24,40,coca cola|coca-cola|coke|cola|कोका कोला
+BEV003,Sprite,Sprite,750ml,750ml,PIECE,24,40,sprite|sprait|स्प्राइट
+BEV004,Pepsi,Pepsi,750ml,750ml,PIECE,24,40,pepsi|पेप्सी
+BEV005,Frooti,Frooti Mango,200ml,200ml,PIECE,40,10,frooti|fruity|फ्रूटी
+BEV006,Maaza,Maaza Mango,600ml,600ml,PIECE,24,40,maaza|maza|माज़ा|माजा
+BEV007,Limca,Limca,750ml,750ml,PIECE,24,40,limca|limka|लिम्का
+SNK001,Dairy Milk,Cadbury Dairy Milk,13g,13g,PIECE,240,10,dairy milk|cadbury|dairymilk|डेरी मिल्क|कैडबरी
+SNK002,Dairy Milk,Cadbury Dairy Milk,50g,50g,PIECE,96,45,dairy milk|cadbury|dairymilk|डेरी मिल्क|कैडबरी
+SNK003,Lay's,Lay's India's Magic Masala,Magic Masala (blue),52g,PACKET,48,20,lays|lay's|lays magic masala|blue lays|neela lays|magic masala|लेज़|लेज
+SNK004,Lay's,Lay's Classic Salted,Classic Salted (yellow),52g,PACKET,48,20,lays|lay's|lays classic|yellow lays|peela lays|classic salted|लेज़|लेज
+SNK005,Kurkure,Kurkure Masala Munch,Masala Munch,90g,PACKET,48,20,kurkure|kurkure masala|कुरकुरे
+SNK006,Haldiram's,Haldiram's Aloo Bhujia,Aloo Bhujia,200g,PACKET,40,55,haldiram|haldirams|aloo bhujia|bhujia|हल्दीराम|भुजिया
+DAI001,Amul Butter,Amul Butter,100g,100g,PIECE,60,58,amul butter|amul makhan|butter|makhan|अमूल बटर|मक्खन
+DAI002,Amul Butter,Amul Butter,500g,500g,PIECE,24,285,amul butter|amul makhan|butter|makhan|अमूल बटर|मक्खन
+HOM001,Harpic,Harpic Original,500ml,500ml,PIECE,24,99,harpic|harpik|हार्पिक
+HOM002,Good Knight,Good Knight Gold Flash Refill,Refill,45ml,PIECE,48,85,good knight|goodknight|good night|गुड नाइट
+HOM003,Odonil,Odonil Air Freshener,Block,50g,PIECE,48,55,odonil|ओडोनिल
+HLT001,Horlicks,Horlicks Classic Malt,Jar,500g,PIECE,12,280,horlicks|horlics|हॉर्लिक्स
+HLT002,Bournvita,Cadbury Bournvita,Jar,500g,PIECE,12,250,bournvita|bornvita|बोर्नविटा
+SPC001,Everest,Everest Garam Masala,Garam Masala,100g,PACKET,48,80,everest|everest garam masala|garam masala|एवरेस्ट
+SPC002,MDH,MDH Chana Masala,Chana Masala,100g,PACKET,48,75,mdh|chana masala|एमडीएच
+SPC003,Kissan,Kissan Tomato Ketchup,Ketchup,500g,PIECE,24,120,kissan|kissan ketchup|ketchup|sauce|किसान
+WAT001,Bisleri,Bisleri Water,1L,1L,PIECE,12,20,bisleri|bisleri pani|बिसलेरी
+PER001,Pond's,Pond's Dreamflower Talc,Talc,100g,PIECE,72,95,ponds|pond's|ponds powder|पॉन्ड्स
