@@ -36,6 +36,7 @@ class MatchResult:
     reasons: list[str] = field(default_factory=list)
     score: float = 0.0
     candidates: list[str] = field(default_factory=list)
+    alias_score: float = 0.0  # best raw alias match, before the junk-words cap (used to tell chatter from products)
 
 
 def _phrase(item: LineItem) -> str:
@@ -134,7 +135,9 @@ def match_item(item: LineItem, cat: Catalog) -> MatchResult:
         if p >= bp - P_TIE and r >= bs - S_TIE and s.family not in fams:
             fams.append(s.family)
     cands = [s for f in fams for s in cat.family_skus(f)]
-    return _finalise(item, _narrow(cands, item, phrase, cat), score, [])
+    m = _finalise(item, _narrow(cands, item, phrase, cat), score, [])
+    m.alias_score = bp
+    return m
 
 
 def match_clarification(reply_items: list[LineItem], candidates: list[str], qty: float | None,

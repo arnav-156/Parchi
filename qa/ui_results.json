@@ -1,0 +1,162 @@
+[
+  {
+    "id": "TC-01",
+    "title": "App loads with all pages and API counter",
+    "expected": "Sidebar shows Inbox, Review, Reply & Clarify, Export, Evaluation and the Gnani API counter; no error",
+    "actual": "All 5 pages + API counter shown; key detected",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-01_inbox.png",
+    "api_calls": 0,
+    "seconds": "2.3"
+  },
+  {
+    "id": "TC-02",
+    "title": "Upload phone call C1 (happy path) and process",
+    "expected": "Note processed in < 10 s with success tick; \"Review this order\" button",
+    "actual": "Processed in 1.4 s (incl. upload + UI); success tick shown",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-02_processed.png",
+    "api_calls": 0,
+    "seconds": "4.6"
+  },
+  {
+    "id": "TC-03",
+    "title": "Review C1: 4 lines, greeting not a line, no wrong GREEN",
+    "expected": "4 lines (Tide 2 carton, Vim 36 pc, Bisleri 1 carton, Kurkure 20 pkt); a line STT got wrong must be AMBER, never a wrong GREEN; greeting dropped; highlighted transcript; audio player",
+    "actual": "3 GREEN / 1 AMBER / 0 RED; 4 highlighted spans; audio present; heard: \"नमस्ते भैया, श्यामा general store से बोल रहा हूँ। Tide के दो carton1, Vim bar तीन dozen2। Bisleri एक पेटी3 और Kurkure Biscuits पैकेट4 भेज देना।\"",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-03_review_c1.png",
+    "api_calls": 0,
+    "seconds": "1.1"
+  },
+  {
+    "id": "TC-04",
+    "title": "Clerk fixes the AMBER line, saves, approves",
+    "expected": "Approve disabled while AMBER; clerk types qty 20 for Kurkure + Save → line GREEN; Approve → APPROVED, edits lock",
+    "actual": "Approve disabled before fix: true; 4 GREEN after Save; order APPROVED, edits locked",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-04_approved.png",
+    "api_calls": 0,
+    "seconds": "3.2"
+  },
+  {
+    "id": "TC-05",
+    "title": "Spoken confirmation for C1 (Timbre v2.5)",
+    "expected": "Hinglish confirmation text listing 4 lines; audio player + .ogg download appear",
+    "actual": "\"Sharma General Store ji, aapka order mila: Tide do carton, Vim chhattis piece, Bisleri ek carton, Kurkure bees packet. Anumaanit total chaar hazaar do…\"; player=1, ogg download=1",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-05_confirmation.png",
+    "api_calls": 0,
+    "seconds": "3.2"
+  },
+  {
+    "id": "TC-06",
+    "title": "Export C1 to Tally CSV",
+    "expected": "CSV with 4 rows, billed qty in base units (Tide 24 pkts, Vim 36 pcs); order marked EXPORTED",
+    "actual": "4 rows saved to qa/downloads/parchi_SO-00001.csv; Tide row: DET005 | Tide Plus 1kg | 2 | CARTON | 24 | PACKET",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-06_export.png",
+    "api_calls": 0,
+    "seconds": "3.1"
+  },
+  {
+    "id": "TC-07",
+    "title": "Upload C2 (complaint + ambiguous) and review",
+    "expected": "Complaint shown as retailer note; Surf Excel & Tata Tea AMBER (which variant?), Maggi AMBER (qty missing); Approve disabled",
+    "actual": "3 AMBER / 0 GREEN; complaint note shown; Approve disabled",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-07_review_c2.png",
+    "api_calls": 0,
+    "seconds": "5.6"
+  },
+  {
+    "id": "TC-08",
+    "title": "Spoken clarifying question for C2",
+    "expected": "Question asks Surf Excel 500 g vs 1 kg, Tata Tea 250 g vs 500 g, and Maggi; audio generated",
+    "actual": "\"Gupta Kirana ji, aapka order mila. Surf Excel kaunsa chahiye, paanch sau gram ya ek kilo? Tata Tea kaunsa chahiye, do sau pachas gram ya paanch sau gram? Maggi kaunsa chahiye, Single ya 4-Pack? Dhanyavaad, Shree Ganesh T\"; player=1",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-08_question.png",
+    "api_calls": 0,
+    "seconds": "2.2"
+  },
+  {
+    "id": "TC-09",
+    "title": "Retailer reply C2R resolves all three lines",
+    "expected": "Uploading the reply on each line: Surf Excel → 1 kg, Tata Tea → 500 g, Maggi → single, 10 packets; all GREEN",
+    "actual": "Surf Excel Easy Wash · 1kg (DET002) · 3 CARTON ; Tata Tea Premium · 500g (TEA002) · 2 BOX ; Maggi Masala Noodles · 70g (NOO001) · 10 PACKET — no open questions left",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-09_resolved.png",
+    "api_calls": 1,
+    "seconds": "14.0"
+  },
+  {
+    "id": "TC-10",
+    "title": "Approve C2 and send spoken confirmation",
+    "expected": "All lines GREEN; approve works; confirmation mentions Surf Excel ek kilo, Tata Tea 500 g, Maggi",
+    "actual": "3 GREEN before approve; \"Gupta Kirana ji, aapka order mila: Surf Excel ek kilo teen carton, Tata Tea paanch sau gram do dabba, Maggi Single das packet. Dhanyavaad, Shree Ganesh Traders.\"",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-10_c2_confirmed.png",
+    "api_calls": 1,
+    "seconds": "4.1"
+  },
+  {
+    "id": "TC-11",
+    "title": "Noisy phone call C3 with fractions",
+    "expected": "Thums Up 3.5 carton + Sprite 1.75 carton GREEN; Parle-G 25 box GREEN, or AMBER if noise garbled the quantity — never dropped, never a wrong GREEN",
+    "actual": "2 GREEN / 1 AMBER / 0 RED; heard: \"साढ़े तीन पेटी Thums Up1, पौने दो पेटी Sprite2 और Parle-G के पैची ढाबे3।\"",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-11_review_c3.png",
+    "api_calls": 0,
+    "seconds": "5.5"
+  },
+  {
+    "id": "TC-12",
+    "title": "English call C4 and English reply",
+    "expected": "Coca-Cola 2 carton, Good Day 5 pkt, Dove 12 pc GREEN; reply drafted in English (en-IN)",
+    "actual": "3 GREEN; detected en-IN; reply: \"Joseph Daily Needs, we have received your order: Coca-Cola 2 carton, Good Day 5 packet, Dove 12 piece. Thank you, Shree Ganesh Traders.\"",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-12_english.png",
+    "api_calls": 0,
+    "seconds": "6.6"
+  },
+  {
+    "id": "TC-13",
+    "title": "Corrupt upload handled gracefully",
+    "expected": "Error message shown for the bad file; app keeps working; no API call",
+    "actual": "broken_note.ogg: Audio attached — please listen.",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-13_corrupt.png",
+    "api_calls": 0,
+    "seconds": "4.5"
+  },
+  {
+    "id": "TC-14",
+    "title": "Re-processing same audio is free (cache)",
+    "expected": "Uploading C1 again makes 0 API calls and says \"cache\"",
+    "actual": "C1_happy_path.ogg — 0.0s (cache)",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-14_cache.png",
+    "api_calls": 0,
+    "seconds": "4.5"
+  },
+  {
+    "id": "TC-15",
+    "title": "Evaluation page shows latest report",
+    "expected": "Results table and both charts render",
+    "actual": "1 table(s), 2 chart image(s)",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-15_evaluation.png",
+    "api_calls": 0,
+    "seconds": "4.3"
+  },
+  {
+    "id": "TC-16",
+    "title": "Phone-width layout (375 px)",
+    "expected": "Review page usable on a phone-width screen without errors",
+    "actual": "renders; columns stack vertically",
+    "status": "PASS",
+    "screenshot": "qa/screenshots/TC-16_mobile_review.png",
+    "api_calls": 0,
+    "seconds": "2.9"
+  }
+]

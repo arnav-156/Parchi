@@ -50,10 +50,18 @@ def transcribe(audio_path: Path, *, keywords: list[str] | None = None, topic: st
     return Transcript(" ".join(t for t in texts if t), lang, gnani_client.usage()["total"] - before, cached)
 
 
+def is_chatter(item: LineItem, m: MatchResult) -> bool:
+    """A phrase with no quantity, unit or size that doesn't clearly name a product is talk, not an order line
+    ("Sharma General Store se bol raha hoon"). Clear mentions like "Good Day bhi dena" are kept (qty_missing)."""
+    # raw alias score: "Parle-G paichi dhabe" (garbled qty) still names Parle-G fully, so it stays as an AMBER line
+    return item.qty is None and item.unit is None and not item.size_cues and m.alias_score < config.GREEN_SCORE
+
+
 def analyse(transcript: str, cat: Catalog | None = None) -> Analysis:
     cat = cat or load_catalog()
     p = parse(transcript)
-    return Analysis(p, [(it, match_item(it, cat)) for it in p.items])
+    lines = [(it, match_item(it, cat)) for it in p.items]
+    return Analysis(p, [(it, m) for it, m in lines if not is_chatter(it, m)])
 
 
 def process_note(conn: sqlite3.Connection, audio_path: Path, retailer_id: str,

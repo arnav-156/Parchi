@@ -71,7 +71,9 @@ CLI:
 .venv/Scripts/python -m parchi.eval synth --n 20                      # synthetic test notes (Timbre, 1 call each)
 .venv/Scripts/python -m parchi.eval run --conditions all --configs A,B
 .venv/Scripts/python -m parchi.eval report                            # rebuild the latest report, no API
-.venv/Scripts/python -m pytest -q                                     # 528 tests; none call the API
+.venv/Scripts/python -m pytest -q                                     # 532 tests; none call the API
+.venv/Scripts/python scripts/make_noise.py                            # synthetic fan/traffic/crowd noise, no API
+.venv/Scripts/python scripts/make_test_calls.py                       # 5 synthetic retailer calls (Timbre + phone line)
 ```
 
 **Credits.** Every STT and TTS call is cached:
@@ -137,7 +139,8 @@ What the numbers show:
 
 - **Catalog biasing mostly fixes brand names.** With B, every SKU was right on phone audio.
 - **Most remaining errors are misheard number words**, e.g. *pachees* → *paanch*, *sattar* → *"Satta"*.
-- **Noise conditions were skipped** because `data/noise/` is empty.
+- **Noise conditions were skipped in this run.** Synthetic noise now exists in `data/noise/` (made by
+  `scripts/make_noise.py`, no real recordings), so the next `run` includes them: about 80 more Prisma calls.
 - **There are no human recordings yet.** To add one, a teammate reads a script from `data/testset/scripts.csv`,
   then registers it with `python -m parchi.eval add-human syn_003 take.ogg`.
 - **Treat the synthetic numbers as a development set.** The synthetic scripts share vocabulary with the parser,
@@ -172,6 +175,7 @@ parchi/        config, gnani_client (the only Gnani caller), audio, translit, le
                matcher, pipeline, db, export, templates, reply, eval/{channel,metrics,synth,run,report}
 app/           streamlit_app.py
 data/          catalog.csv, retailers.csv, samples/, testset/{audio,labels.csv,scripts.csv}, noise/
-scripts/       smoke_test.py
+scripts/       smoke_test.py, make_noise.py, make_test_calls.py
+qa/            Parchi_Test_Plan.xlsx (test cases, results, findings, human recording kit, API budget), screenshots/
 tests/         parser, matcher, translit, templates, channel, metrics, export, pipeline (mocked), eval (mocked), app
 ```

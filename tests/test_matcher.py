@@ -143,3 +143,36 @@ def test_stt_keywords_limit_brands_first_and_both_scripts():
     assert len(kw) <= 200 and len({k.lower() for k in kw}) == len(kw)
     assert kw[0] == "Parle-G" and "Colgate" in kw[:70]
     assert any("ऀ" <= ch <= "ॿ" for k in kw for ch in k)
+
+
+# ---------- regressions from the synthetic phone-call test run (real Prisma transcripts) ----------
+
+def lines_of(transcript):
+    from parchi.pipeline import analyse
+    return [(m.sku_id, m.qty, m.unit, m.status) for _, m in analyse(transcript, CAT).lines]
+
+
+def test_call_greeting_is_not_an_order_line():
+    t = ("नमस्ते भैया, श्यामा general store से बोल रहा हूँ। Tide के दो carton, Vim bar तीन dozen। "
+         "Bisleri एक पेटी और Kurkure Biscuits पैकेट भेज देना।")
+    assert lines_of(t) == [("DET005", 2, "CARTON", "GREEN"), ("DET007", 36, "PIECE", "GREEN"),
+                           ("WAT001", 1, "CARTON", "GREEN"), ("SNK005", None, "PACKET", "AMBER")]
+
+
+def test_garbled_quantity_keeps_the_product_line():
+    # "pachees dabbe" heard as "पैची ढाबे": Parle-G must stay visible (AMBER), not vanish as chatter
+    out = lines_of("साढ़े तीन पेटी Thums Up, पौने दो पेटी Sprite और Parle-G के पैची ढाबे।")
+    assert out[:2] == [("BEV001", 3.5, "CARTON", "GREEN"), ("BEV003", 1.75, "CARTON", "GREEN")]
+    assert out[2][0] == "BIS001" and out[2][3] == "AMBER"
+
+
+def test_english_call():
+    t = ("Hello, this is Joseph Daily Needs. Please send two cartons of Coca-Cola, five packets of Good Day, "
+         "and one dozen Dove soap.")
+    assert lines_of(t) == [("BEV002", 2, "CARTON", "GREEN"), ("BIS002", 5, "PACKET", "GREEN"),
+                           ("SOP005", 12, "PIECE", "GREEN")]
+
+
+def test_is_baar_complaint_call():
+    t = "हाँ जी, गुप्ता किराना से। पिछली बार Surf Excel खराब आया था, इस बार Surf Excel तीन carton। Tata Tea दो डब्बा और Maggi भी भेज देना।"
+    assert [(s, q, u) for s, q, u, _ in lines_of(t)] == [(None, 3, "CARTON"), (None, 2, "BOX"), (None, None, None)]

@@ -1,0 +1,5 @@
+﻿Voucher Date,Voucher Type,Voucher No,Party Name,Item Code,Item Name,Ordered Qty,Ordered Unit,Billed Qty,Base Unit,Rate,Amount,Narration
+2026-11-10,Sales Order,SO-00001,Sharma General Store,DET005,Tide Plus 1kg,2,CARTON,24,PACKET,120.00,2880.00,
+2026-11-10,Sales Order,SO-00001,Sharma General Store,DET007,Vim Dishwash Bar 200g,36,PIECE,36,PIECE,20.00,720.00,
+2026-11-10,Sales Order,SO-00001,Sharma General Store,WAT001,Bisleri Water 1L,1,CARTON,12,PIECE,20.00,240.00,
+2026-11-10,Sales Order,SO-00001,Sharma General Store,SNK005,Kurkure Masala Munch 90g,20,PACKET,20,PACKET,20.00,400.00,

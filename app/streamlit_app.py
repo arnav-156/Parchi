@@ -117,6 +117,7 @@ def page_inbox() -> None:
             st.warning("Upload at least one voice note.")
         else:
             order_id = None
+            failed = 0
             with st.status(f"Transcribing {len(files)} note(s) with Gnani Prisma v3.0…", expanded=True) as status:
                 for f in files:
                     t0 = time.perf_counter()
@@ -124,13 +125,17 @@ def page_inbox() -> None:
                         order_id, note_id = pipeline.process_note(conn, save_upload(f), rid, order_id, f.name)
                         note = db.row(conn, "voice_notes", note_id)
                         if note["status"] == "STT_FAILED":
+                            failed += 1
                             st.error(f"{f.name}: {note['error']}")
                         else:
                             src = "cache" if note["api_calls"] == 0 else f"{note['api_calls']} API call(s)"
                             st.write(f"✅ {f.name} — {time.perf_counter() - t0:.1f}s ({src})")
                     except Exception as exc:  # never crash the UI
+                        failed += 1
                         st.error(f"{f.name}: could not process ({exc})")
-                status.update(label="Done", state="complete")
+                # keep the per-file results open: a collapsed box hid upload errors from the clerk
+                status.update(label=f"Done — {len(files) - failed} processed, {failed} need attention" if failed
+                              else "Done", state="error" if failed else "complete", expanded=True)
             if order_id:
                 st.session_state.order_id = order_id
                 st.button("Review this order →", type="primary", on_click=go, args=("Review", order_id))
