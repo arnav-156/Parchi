@@ -1,5 +1,8 @@
 # Parchi — voice-note order desk for FMCG distributors
 
+> **📄 [1-page solution pitch](PITCH.md)** ([PDF](docs/Parchi_Pitch.pdf)) · **🎥 [Demo video, 1:38](docs/Parchi_Demo.mp4)** ·
+> Built on **Gnani Prisma v3.0** + **Gnani Timbre v2.5**
+
 Parchi turns Hinglish WhatsApp voice notes from kirana retailers into a verified order sheet, asks the
 retailer a spoken question when a line is unclear, and replies with a spoken confirmation.
 

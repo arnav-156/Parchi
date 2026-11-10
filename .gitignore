@@ -7,3 +7,4 @@ reports/
 *.db
 .pytest_cache/
 data/uploads/
+.claude/
